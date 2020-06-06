@@ -26,13 +26,13 @@
 
             if($sql->query("SELCT * FROM utenti WHERE email='$emailOrUsername'")->num_rows > 0){
                 if($sql->query("SELCT * FROM utenti WHERE email='$emailOrUsername' AND password='$password'")->num_rows > 0){
-                    //Logged in
+                    die("Entrato con email");
                 }else{
                     die("Password errata");
                 }
             }elseif($sql->query("SELCT * FROM utenti WHERE username='$emailOrUsername'")->num_rows > 0){
                 if($sql->query("SELCT * FROM utenti WHERE username='$emailOrUsername' AND password='$password'")->num_rows > 0){
-                    //Logged in
+                    die("Entrato con email");
                 }else{
                     die("Password errata");
                 }
