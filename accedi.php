@@ -20,6 +20,27 @@
         }
     }elseif ($_SERVER['REQUEST_METHOD'] == "POST"){
 
+        if(isset($_POST['accedi'])){
+            $emailOrUsername = $_POST['emailOrUsername'];
+            $password = $_POST['password'];
+
+            if($sql->query("SELCT * FROM utenti WHERE email='$emailOrUsername'")->num_rows > 0){
+                if($sql->query("SELCT * FROM utenti WHERE email='$emailOrUsername' AND password='$password'")->num_rows > 0){
+                    //Logged in
+                }else{
+                    die("Password errata");
+                }
+            }elseif($sql->query("SELCT * FROM utenti WHERE username='$emailOrUsername'")->num_rows > 0){
+                if($sql->query("SELCT * FROM utenti WHERE username='$emailOrUsername' AND password='$password'")->num_rows > 0){
+                    //Logged in
+                }else{
+                    die("Password errata");
+                }
+            }else{
+                die("Utente non trovato");
+            }
+
+        }
         print_r($_POST);
 
     }
