@@ -25,15 +25,15 @@
             $password = $_POST['password'];
             echo $emailOrUsername;
             echo $password;
-            if($sql->query("SELCT * FROM utenti WHERE email='$emailOrUsername'")->num_rows > 0){
-                if($sql->query("SELCT * FROM utenti WHERE email='$emailOrUsername' AND password='$password'")->num_rows > 0){
+            if($sql->query("SELECT * FROM utenti WHERE email='$emailOrUsername'")->num_rows > 0){
+                if($sql->query("SELECT * FROM utenti WHERE email='$emailOrUsername' AND password='$password'")->num_rows > 0){
                     die("Entrato con email");
                 }else{
                     die("Password errata");
                 }
-            }elseif($sql->query("SELCT * FROM utenti WHERE username='$emailOrUsername'")->num_rows > 0){
-                if($sql->query("SELCT * FROM utenti WHERE username='$emailOrUsername' AND password='$password'")->num_rows > 0){
-                    die("Entrato con email");
+            }elseif($sql->query("SELECT * FROM utenti WHERE username='$emailOrUsername'")->num_rows > 0){
+                if($sql->query("SELECT * FROM utenti WHERE username='$emailOrUsername' AND password='$password'")->num_rows > 0){
+                    die("Entrato con username");
                 }else{
                     die("Password errata");
                 }
