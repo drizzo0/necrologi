@@ -25,12 +25,24 @@
             $password = md5($_POST['password']);
             if($sql->query("SELECT * FROM utenti WHERE email='$emailOrUsername'")->num_rows > 0){
                 if($sql->query("SELECT * FROM utenti WHERE email='$emailOrUsername' AND password='$password'")->num_rows > 0){
+                    $user = $sql->query("SELECT * FROM utenti WHERE email='$emailOrUsername'")->fetch_array();
+                    $_SESSION['user']['username'] = $user['username'];
+                    $_SESSION['user']['id'] = $user['id'];
+                    $_SESSION['user']['nome'] = $user['nome'];
+                    $_SESSION['user']['cognome'] = $user['cognome'];
+                    $_SESSION['user']['email'] = $user['email'];
                     die("Entrato con email");
                 }else{
                     die("Password errata");
                 }
             }elseif($sql->query("SELECT * FROM utenti WHERE username='$emailOrUsername'")->num_rows > 0){
                 if($sql->query("SELECT * FROM utenti WHERE username='$emailOrUsername' AND password='$password'")->num_rows > 0){
+                    $user = $sql->query("SELECT * FROM utenti WHERE username='$emailOrUsername'")->fetch_array();
+                    $_SESSION['user']['username'] = $user['username'];
+                    $_SESSION['user']['id'] = $user['id'];
+                    $_SESSION['user']['nome'] = $user['nome'];
+                    $_SESSION['user']['cognome'] = $user['cognome'];
+                    $_SESSION['user']['email'] = $user['email'];
                     die("Entrato con username");
                 }else{
                     die("Password errata");
