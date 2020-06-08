@@ -41,10 +41,10 @@
         $idNecrologio = $_GET['idNecrologio'];
         $necrologio = $sql->query("SELECT * FROM necrologi WHERE idNecrologio = $idNecrologio")->fetch_array();
         ?>
-        <div style="width: 50%; float:left; height:100%; background:gray">
+        <div style="width: 70%; float:left; height:100%; background:gray">
             First DIV
         </div>
-        <div style="width: 50%; float:left; height:100%; background:yellow">
+        <div style="width: 30%; float:left; height:100%; background:yellow">
             Second DIV
         </div>
         <?php
