@@ -37,7 +37,7 @@
             foreach ($querys as $query){
                 $sql->query($query);
                 if($sql->error){
-                    die($sql->error);
+                    //die($sql->error);
                 }
             }
         }
