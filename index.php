@@ -6,4 +6,5 @@
 <a href="installa.php">Installa</a><br>
 <a href="listautenti.php">Lista utenti</a><br>
 <a href="necrologi.php">Necrologi</a><br>
+<a href="necrologiadmin.php">Necrologi admin</a><br>
 <a href="pensieridaapprovare.php">Pensieri da approvare</a><br>
