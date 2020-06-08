@@ -42,10 +42,10 @@
         $necrologio = $sql->query("SELECT * FROM necrologi WHERE idNecrologio = $idNecrologio")->fetch_array();
         ?>
         <div style="width: 70%; float:left; height:100%; text-align: center; align-content: center">
-            First DIV
+            <h1>Necrologio</h1>
         </div>
         <div style="width: 30%; float:left; height:100%; text-align: center; align-content: center">
-            Second DIV
+            <h1>Pensieri</h1>
         </div>
         <?php
     }
