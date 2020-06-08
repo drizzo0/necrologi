@@ -30,12 +30,12 @@
 
         echo "Nome: $nome<br>";
         echo "Cognome: $cognome<br>";
-        echo "Et&agrave: $nome<br>";
-        echo "Citt&agrave di residenza: $nome<br>";
-        echo "Chiesa celebrazione: $nome<br>";
-        echo "Data celebrazione: $nome<br>";
-        echo "Luogo di riposo: $nome<br>";
-        echo "Necrologio: $nome<br>";
+        echo "Et&agrave: $eta<br>";
+        echo "Citt&agrave di residenza: $luogoResidenza<br>";
+        echo "Chiesa celebrazione: $luogoCelebrazione<br>";
+        echo "Data celebrazione: $dataCelebrazione $ora:$minuti<br>";
+        echo "Luogo di riposo: $luogoRiposo<br>";
+        echo "Necrologio: $necrologio<br>";
         echo "Foto: <br>".base64_decode($foto)."<br>";
 
 
