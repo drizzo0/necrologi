@@ -37,7 +37,7 @@
         echo "Data celebrazione: $dataCelebrazione $ora:$minuti<br>";
         echo "Luogo di riposo: $luogoRiposo<br>";
         echo "Necrologio: $necrologio<br>";
-        echo "Tipo Mime Foto: $tipoMimeFoto";
+        echo "Tipo Mime Foto: $tipoMimeFoto<br>";
         echo "Foto: <br><img src='data: ".$tipoMimeFoto.";base64,".$foto."'/><br>";
 
 
