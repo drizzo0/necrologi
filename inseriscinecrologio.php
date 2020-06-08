@@ -5,6 +5,9 @@
  * TODO: sistemare il "se request method è post" mettendo la condizione "isset" sul tasto submit
  */
     include 'dbconnect.php';
+    if(!isset($_SESSION['user']) && !isset($_SESSION['user']['username'])){
+        header('location: accedi.php');
+    }
     if($_SERVER['REQUEST_METHOD']=="GET"){
         ?>
             <form method="post" action="#inserisci" enctype="multipart/form-data">
