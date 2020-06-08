@@ -4,7 +4,7 @@
     while ($necrologio = $necrologi->fetch_assoc()){
         $data .= "
             <tr>
-                <td>".$necrologio['id']."</td>
+                <td>".$necrologio['idNecrologio']."</td>
                 <td><img width='100' height='100' src='data: ".$necrologio['tipoMimeFoto'].";base64,".$necrologio['foto']."'/></td>
                 <td>".$necrologio['nome']."</td>
                 <td>".$necrologio['cognome']."</td>
