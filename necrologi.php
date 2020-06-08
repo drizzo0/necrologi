@@ -40,12 +40,22 @@
     }else{
         $idNecrologio = $_GET['idNecrologio'];
         $necrologio = $sql->query("SELECT * FROM necrologi WHERE idNecrologio = $idNecrologio")->fetch_array();
+        $pensieriSql = $sql->query("SELECT * FROM pensieriNecrologi WHERE idNecrologio = $idNecrologio");
+        if($pensieriSql->num_rows == 0){
+            $pensieri = "Non è stato ancora inserito nessun pensiero.";
+        }else{
+            while ($pensieriArray = $pensieriSql->fetch_assoc()){
+                $pensieri .= "Nome: ".$pensieriArray['nome']." ".$pensieriArray['cognome']." - Inserito il ".$pensieriArray['dataInserimento']."<br>";
+                $pensieri .= $pensieriArray['pensiero']."<br>";
+            }
+        }
         ?>
         <div style="width: 70%; float:left; height:100%; text-align: center; align-content: center">
             <h1>Necrologio</h1>
         </div>
         <div style="width: 30%; float:left; height:100%; text-align: center; align-content: center">
             <h1>Pensieri</h1>
+            <?php echo $pensieri; ?>
         </div>
         <?php
     }
