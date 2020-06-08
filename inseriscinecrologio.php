@@ -17,6 +17,7 @@
         <?php
     }elseif ($_SERVER['REQUEST_METHOD']=="POST"){
         $foto = base64_encode(file_get_contents($_FILES['foto']['tmp_name']));
+        $tipoMimeFoto = mime_content_type($_FILES['foto']['tmp_name']);
         $nome = $_POST['nome'];
         $cognome = $_POST['cognome'];
         $luogoResidenza = $_POST['luogo_residenza'];
@@ -36,7 +37,8 @@
         echo "Data celebrazione: $dataCelebrazione $ora:$minuti<br>";
         echo "Luogo di riposo: $luogoRiposo<br>";
         echo "Necrologio: $necrologio<br>";
-        echo "Foto: <br><img src='data:image/png;charset=utf-8;base64, ".base64_decode($foto)."'/><br>";
+        echo "Tipo Mime Foto: $tipoMimeFoto";
+        echo "Foto: <br><img src='data: ".$tipoMimeFoto.";base64,".$foto."'/><br>";
 
 
     }
