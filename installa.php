@@ -29,7 +29,7 @@
     }else{
         $versioneAttuale = $sql->query("SELECT * FROM impostazioni WHERE nomeImpostazione='versioneDatabase'")->fetch_array()['valoreImpostazione'];
         if($versioneAttuale == $versioneDaInstallare){
-            die("Database già installato e aggiornato");
+            die("Versione attuale DB: $versioneAttuale.<br>Database già installato e aggiornato.");
         }elseif ($versioneAttuale == 1){
             unset($querys);
             $querys[] = "ALTER TABLE necrologi ADD COLUMN tipoMimeFoto varchar(255)";
