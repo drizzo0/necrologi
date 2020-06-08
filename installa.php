@@ -1,7 +1,7 @@
 <?php
     include 'dbconnect.php';
     if(isset($querys)){ unset($querys); }
-    $versioneDaInstallare = 1;
+    $versioneDaInstallare = 2;
     if($sql->query("SELECT * FROM impostazioni WHERE nomeImpostazione='databaseInstallato'")->num_rows == 0) {
 
         $querys[] = "CREATE TABLE utenti (`id` int PRIMARY KEY AUTO_INCREMENT, `username` varchar(255), `email` varchar(255), `nome` varchar(255), `cognome` varchar(255), `password` varchar(255), `dataCreazione` datetime, `creatoDa` int)";
@@ -30,5 +30,15 @@
         $versioneAttuale = $sql->query("SELECT * FROM impostazioni WHERE nomeImpostazione='versioneDatabase'")->fetch_array()['valoreImpostazione'];
         if($versioneAttuale == $versioneDaInstallare){
             die("Database già installato e aggiornato");
+        }elseif ($versioneAttuale == 1){
+            unset($querys);
+            $querys[] = "ALTER TABLE necrologi ADD COLUMN tipoMimeFoto varchar(255)";
+
+            foreach ($querys as $query){
+                $sql->query($query);
+                if($sql->error){
+                    die($sql->error);
+                }
+            }
         }
     }
