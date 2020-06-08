@@ -50,6 +50,6 @@
         echo "Tipo Mime Foto: $tipoMimeFoto<br>";
         echo "Foto: <br><img src='data: ".$tipoMimeFoto.";base64,".$foto."'/><br>";
 
-        $sql->query("INSERT INTO necrologi (nome, cognome, inseritoDa, dataInserimento, foto, eta, luogoResidenza, nercologio, luogoCelebrazione, dataCelebrazione, cittaCelebrazione, luogoRiposo) VALUES ('$nome', '$cognome', 1, '$dataInserimento', '$foto', '$eta', '$luogoResidenza', '$necrologio', '$luogoCelebrazione', '$dataCelebrazioneCompleta', '$cittaCelebrazione', '$luogoRiposo')");
+        $sql->query("INSERT INTO necrologi (nome, cognome, inseritoDa, dataInserimento, foto, eta, luogoResidenza, necrologio, luogoCelebrazione, dataCelebrazione, cittaCelebrazione, luogoRiposo) VALUES ('$nome', '$cognome', 1, '$dataInserimento', '$foto', '$eta', '$luogoResidenza', '$necrologio', '$luogoCelebrazione', '$dataCelebrazioneCompleta', '$cittaCelebrazione', '$luogoRiposo')");
 
     }

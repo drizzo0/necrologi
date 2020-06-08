@@ -5,7 +5,7 @@
     if($sql->query("SELECT * FROM impostazioni WHERE nomeImpostazione='databaseInstallato'")->num_rows == 0) {
 
         $querys[] = "CREATE TABLE utenti (`id` int PRIMARY KEY AUTO_INCREMENT, `username` varchar(255), `email` varchar(255), `nome` varchar(255), `cognome` varchar(255), `password` varchar(255), `dataCreazione` datetime, `creatoDa` int)";
-        $querys[] = "CREATE TABLE necrologi (`idNecrologio` int PRIMARY KEY AUTO_INCREMENT, `nome` varchar(255), `cognome` varchar(255), `inseritoDa` int, `dataInserimento` date, `foto` longtext, `eta` int, `luogoResidenza` varchar(255), `nercologio` longtext, `luogoCelebrazione` varchar(255), `dataCelebrazione` datetime, `cittaCelebrazione` varchar(255), `luogoRiposo` varchar(255))";
+        $querys[] = "CREATE TABLE necrologi (`idNecrologio` int PRIMARY KEY AUTO_INCREMENT, `nome` varchar(255), `cognome` varchar(255), `inseritoDa` int, `dataInserimento` date, `foto` longtext, `eta` int, `luogoResidenza` varchar(255), `necrologio` longtext, `luogoCelebrazione` varchar(255), `dataCelebrazione` datetime, `cittaCelebrazione` varchar(255), `luogoRiposo` varchar(255))";
         $querys[] = "CREATE TABLE pensieriNecrologi (`idNecrologio` int PRIMARY KEY AUTO_INCREMENT, `nome` varchar(255), `cognome` varchar(255), `dataInserimento` date, `oggettoPensiero` longtext, `pensiero` longtext, `approvato` tinyint, `approvatoDa` int)";
         $querys[] = "CREATE TABLE impostazioni (`idImpostazione` int PRIMARY KEY AUTO_INCREMENT, `nomeImpostazione` varchar(255), `valoreImpostazione` longtext)";
 
