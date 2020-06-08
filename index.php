@@ -1,0 +1,9 @@
+<a href="accedi.php">Accedi</a><br>
+<a href="esci.php">Esci</a><br>
+<a href="creanuovoaccount.php">Crea nuovo account</a><br>
+<a href="eliminanecrologio.php">Elimina necrologio</a><br>
+<a href="inseriscinecrologio.php">Inserisci necrologio</a><br>
+<a href="installa.php">Installa</a><br>
+<a href="listautenti.php">Lista utenti</a><br>
+<a href="necrologi.php">Necrologi</a><br>
+<a href="pensieridaapprovare.php">Pensieri da approvare</a><br>
