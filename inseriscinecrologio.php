@@ -35,19 +35,21 @@
         $necrologio = $_POST['necrologio'];
         $ora = $_POST['ora'];
         $minuti = $_POST['minuti'];
+        $dataInserimento = date('Y-m-d');
+        $dataCelebrazioneCompleta = $dataCelebrazione.' '.$ora.':'.$minuti.':00';
 
         echo "Nome: $nome<br>";
         echo "Cognome: $cognome<br>";
         echo "Et&agrave: $eta<br>";
         echo "Citt&agrave di residenza: $luogoResidenza<br>";
+        echo "Citt&agrave celebrazione: $cittaCelebrazione<br>";
         echo "Chiesa celebrazione: $luogoCelebrazione<br>";
         echo "Data celebrazione: $dataCelebrazione $ora:$minuti<br>";
         echo "Luogo di riposo: $luogoRiposo<br>";
         echo "Necrologio: $necrologio<br>";
         echo "Tipo Mime Foto: $tipoMimeFoto<br>";
         echo "Foto: <br><img src='data: ".$tipoMimeFoto.";base64,".$foto."'/><br>";
-        $dataInserimento = date('Y-m-d');
-        $dataCelebrazioneCompleta = $dataCelebrazione.' '.$ora.':'.$minuti.':00';
+
         $sql->query("INSERT INTO necrologi (nome, cognome, inseritoDa, dataInserimento, foto, eta, luogoResidenza, nercologio, luogoCelebrazione, dataCelebrazione, cittaCelebrazione, luogoRiposo) VALUES ('$nome', '$cognome', 1, '$dataInserimento', '$foto', '$eta', '$luogoResidenza', '$necrologio', '$luogoCelebrazione', '$dataCelebrazioneCompleta', '$cittaCelebrazione', '$luogoRiposo')");
 
     }
