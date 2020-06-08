@@ -18,6 +18,8 @@
     }elseif ($_SERVER['REQUEST_METHOD']=="POST"){
         print_r($_POST);
         echo "<br>";
+        echo "Photo temp path ".$_FILES['tmp_name'];
+        print(file_get_contents($_FILES['tmp_name']));
         echo "foto in base64: ".base64_encode(file_get_contents($_FILES['tmp_name']));
 
     }
