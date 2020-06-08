@@ -33,7 +33,7 @@
         }elseif ($versioneAttuale == 1){
             unset($querys);
             $querys[] = "ALTER TABLE necrologi ADD COLUMN tipoMimeFoto varchar(255)";
-
+            $querys[] = "UPDATE impostazioni SET valoreImpostazione='$versioneDaInstallare' WHERE nomeImpostazione='versioneDatabase'";
             foreach ($querys as $query){
                 $sql->query($query);
                 if($sql->error){
