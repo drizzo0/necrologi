@@ -1,9 +1,4 @@
 <?php
-/**
- * TODO: Sistemare inserito da in query
- * TODO: abilitare la pagina solo per chi è loggato
- * TODO: sistemare il "se request method è post" mettendo la condizione "isset" sul tasto submit
- */
     include 'dbconnect.php';
     if(!isset($_SESSION['user']) && !isset($_SESSION['user']['username'])){
         header('location: accedi.php');
@@ -40,8 +35,9 @@
         $minuti = $_POST['minuti'];
         $dataInserimento = date('Y-m-d');
         $dataCelebrazioneCompleta = $dataCelebrazione.' '.$ora.':'.$minuti.':00';
+        $idUtente = $_SESSION['user']['id'];
 
-        echo "Nome: $nome<br>";
+/*        echo "Nome: $nome<br>";
         echo "Cognome: $cognome<br>";
         echo "Et&agrave: $eta<br>";
         echo "Citt&agrave di residenza: $luogoResidenza<br>";
@@ -52,7 +48,9 @@
         echo "Necrologio: $necrologio<br>";
         echo "Tipo Mime Foto: $tipoMimeFoto<br>";
         echo "Foto: <br><img src='data: ".$tipoMimeFoto.";base64,".$foto."'/><br>";
+*/
+        $sql->query("INSERT INTO necrologi (nome, cognome, inseritoDa, dataInserimento, foto, eta, luogoResidenza, necrologio, luogoCelebrazione, dataCelebrazione, cittaCelebrazione, luogoRiposo) VALUES ('$nome', '$cognome', '$idUtente', '$dataInserimento', '$foto', '$eta', '$luogoResidenza', '$necrologio', '$luogoCelebrazione', '$dataCelebrazioneCompleta', '$cittaCelebrazione', '$luogoRiposo')");
 
-        $sql->query("INSERT INTO necrologi (nome, cognome, inseritoDa, dataInserimento, foto, eta, luogoResidenza, necrologio, luogoCelebrazione, dataCelebrazione, cittaCelebrazione, luogoRiposo) VALUES ('$nome', '$cognome', 1, '$dataInserimento', '$foto', '$eta', '$luogoResidenza', '$necrologio', '$luogoCelebrazione', '$dataCelebrazioneCompleta', '$cittaCelebrazione', '$luogoRiposo')");
+        header("location: necrologi.php");
 
     }
